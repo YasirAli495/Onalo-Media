@@ -38,16 +38,18 @@ return [
     'mailers' => [
 
         'smtp' => [
-            'transport' => 'smtp',
-            'scheme' => env('MAIL_SCHEME'),
-            'url' => env('MAIL_URL'),
-            'host' => env('MAIL_HOST', '127.0.0.1'),
-            'port' => env('MAIL_PORT', 2525),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
-        ],
+    'transport' => 'smtp',
+    'scheme' => env('MAIL_SCHEME', 'tls'),  // Use TLS encryption
+    'url' => env('MAIL_URL'),  // This is typically empty unless you're using a specific URL for your mail service
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),  // Set the correct host for Gmail SMTP
+    'port' => env('MAIL_PORT', 587),  // Use port 587 for TLS
+    'username' => env('MAIL_USERNAME'),  // This should be your Gmail address
+    'password' => env('MAIL_PASSWORD'),  // This should be your Gmail App Password (if using 2FA)
+    'timeout' => null,  // Set timeout as needed
+    'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+],
+
+
 
         'ses' => [
             'transport' => 'ses',

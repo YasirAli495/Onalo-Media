@@ -238,7 +238,12 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md">
-                      <span class="avatar-initials">{{ strtoupper(substr(Auth::user()->name, 0, 2)) }}</span>
+                        @if (Auth::check())
+                        <span class="avatar-initials">{{ strtoupper(substr(Auth::user()->name, 0, 2)) }}</span>
+                    @else
+                        <script>window.location = "/login";</script> <!-- Redirect to login if not authenticated -->
+                    @endif
+
                     </div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end pt-0">
@@ -246,8 +251,15 @@
                     
                     <!-- User's name and email -->
                     <a class="dropdown-item" href="#">
-                      <span class="fw-semibold">{{ Auth::user()->name }}</span><br>
-                      <span class="text-muted">{{ Auth::user()->email }}</span>
+                        @if (Auth::check())
+                        <span class="fw-semibold">{{ Auth::user()->name }}</span><br>
+                        <span class="text-muted">{{ Auth::user()->email }}</span>
+                    @else
+                        <script>
+                            window.location.href = '/login';
+                        </script>
+                    @endif
+                    
                     </a>
                 
                     <div class="dropdown-divider"></div>
