@@ -259,9 +259,7 @@
                                     <h1 class="custom-card-heading">{{ $card->title }}</h1>
                                     <p class="custom-card-description">{{ $card->description }}</p>
                                     <div class="custom-card-footer">
-                                        <button class="custom-card-btn">
-                                            <img src="../images/arrow-up-right.png" alt="Right Arrow">
-                                        </button>
+                                        
                                     </div>
                                 </div>
                             </a>

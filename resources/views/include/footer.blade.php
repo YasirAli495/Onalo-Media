@@ -16,8 +16,10 @@
 
 <footer class="footer-container">
     <div class="footer-section">
-        <h1 class="footer-logo">Onalo Media</h1>
-        <p class="footer-description">Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
+        <div class="Logo-bg">
+            <img src="{{ asset('images/Logo3.png') }}" alt="" style="width:; height:60px;">
+        </div>
+        <p class="footer-description">© 2025 Onalo Media | Elevating Creativity, Empowering Brands.</p>
         <div class="social-icons">
             @foreach(['t4.png', 't3.png', 't2.png', 't1.png'] as $icon)
                 <div><img src="{{ asset('images/' . $icon) }}" class="social-icon" alt=""></div>
@@ -32,7 +34,7 @@
                 ['Onalo Media About', url('/about')], 
                 ['Our Services', url('/services')], 
                 ['Our Blogs', url('/blog')], 
-                ['FAQ’S', url('/career')], 
+                ['Career', url('/career')], 
                 ['Contact Us', url('/contact')]
             ] as $link)
                 <div class="link-item">
@@ -48,11 +50,11 @@
         <h1 class="footer-heading">Contact Us</h1>
         <div class="contact-item">
             <img src="{{ asset('images/www.svg') }}" class="contact-icon" alt="">
-            <a href="mailto:info@example.com" class="contact-text">info@example.com</a>
+            <a href="mailto:info@example.com" class="contact-text">info@onalomedia.com</a>
         </div>
         <div class="contact-item">
             <img src="{{ asset('images/phone.png') }}" class="contact-icon" alt="">
-            <a href="tel:+2086660112" class="contact-text">+208-666-0112</a>
+            <a href="tel:+2086660112" class="contact-text">+1 316-712-4886</a>
         </div>
         <input type="text" class="contact-input" placeholder="Your Email Address">
         <div class="checkbox-item">

@@ -8069,17 +8069,7 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-.sidebar-nav .nav-link.active {
-  color: var(--cui-sidebar-nav-link-active-color);
-  background: var(--cui-sidebar-nav-link-active-bg);
-}
-.sidebar-nav .nav-link.active .nav-icon {
-  color: var(--cui-sidebar-nav-link-active-icon-color);
-}
-.sidebar-nav .nav-link.active .nav-icon-bullet {
-  background: var(--cui-sidebar-link-active-icon-bullet-bg);
-  border-color: var(--cui-sidebar-link-active-icon-bullet-border-color);
-}
+
 .sidebar-nav .nav-link.disabled {
   color: var(--cui-sidebar-nav-link-disabled-color);
   pointer-events: none;

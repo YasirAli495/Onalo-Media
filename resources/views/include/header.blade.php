@@ -6,10 +6,10 @@
                 <div class="navbar-container">
                     <!-- Logo -->
                     <div class="logo-container">
-                        <div class="logo-bg">
-                            <img src="https://via.placeholder.com/30" alt="">
+                        <div class="Logo-bg">
+                            <img src="{{ asset('images/Logo3.png') }}" alt="" style="width:100%; height:60px;">
                         </div>
-                        <span class="logo-text">ONALO MEDIA</span>
+                       
                     </div>
                     <!-- Navbar Links -->
                     <div class="navbar-links">

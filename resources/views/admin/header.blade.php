@@ -13,6 +13,8 @@
         <meta name="author" content="Łukasz Holeczek">
         <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
         <title>Onalo Media Admin Panel</title>
+<link rel="icon" href="{{ asset('images/Logo3.png') }}" type="image/png">
+
         
         <meta name="theme-color" content="#ffffff">
         <!-- Vendors styles-->
@@ -30,145 +32,158 @@
   <script src="{{ asset('adminjs/color-modes.js') }}"></script>
   <link rel="stylesheet" href="{{ asset('admincss/coreui-chartjs.css') }}">
   
+
+  <style>
+    /* Sidebar hover effect */
+    .sidebar-nav .nav-item:hover {
+        background-color: #660000; /* Darker shade of maroon */
+    }
+    .sidebar-nav .nav-link:hover {
+        color: black !important; /* Ensure text color stays white */
+    }
+
+    .sidebar-nav .nav-icon:hover {
+        color: black !important; /* Ensure text color stays white */
+    }
+</style>
       </head>
       <body>
-        <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
-          <div class="sidebar-header border-bottom">
-              <div class="sidebar-brand">
-                  <h2>Onalo Media</h2>
-                  <svg class="sidebar-brand-narrow" width="32" height="32" alt="CoreUI Logo">
-                      <use xlink:href="{{ asset('adminimages/coreui.svg#signet') }}"></use>
-                  </svg>
-              </div>
-              <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" data-coreui-theme="dark" aria-label="Close" 
-                  onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-              </button>
-          </div>
-      
-          <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.dashboard') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-speedometer') }}"></use>
-                      </svg> Dashboard
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.home') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('adminimages/free.svg#cil-home') }}"></use>
-                    </svg> Home
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.about') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('adminimages/free.svg#cil-info') }}"></use>
-                    </svg> About
-                </a>
-            </li>
-      
-              <li class="nav-group">
-                  <a class="nav-link nav-group-toggle" href="#">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-briefcase') }}"></use>
-                      </svg> Services
-                  </a>
-                  <ul class="nav-group-items compact">
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin.digitalmedia') }}">
-                              <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Digital Media
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('admin.printmedia') }}">
-                              <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Print Media
-                              
-                          </a>
-                      </li>
-                  </ul>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.blogs.blog') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-notes') }}"></use>
-                      </svg> Blogs
-                  </a>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.contact.index') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-envelope-open') }}"></use>
-                      </svg> Contact Info
-                  </a>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.messages') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-envelope-open') }}"></use>
-                      </svg> Messages
-                  </a>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('teams.index') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-user') }}"></use>
-                      </svg> Team Members
-                  </a>
-              </li>
-
-
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('admin.jobs.index') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-briefcase') }}"></use>
-                      </svg> Jobs
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('jobs.applications') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('adminimages/free.svg#cil-notes') }}"></use>
-                    </svg> Jobs Applications
-                </a>
-            </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-user-plus') }}"></use>
-                      </svg> Register
-                  </a>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('login') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-user') }}"></use>
-                      </svg> Login
-                  </a>
-              </li>
-      
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('logout') }}">
-                      <svg class="nav-icon">
-                          <use xlink:href="{{ asset('adminimages/free.svg#cil-account-logout') }}"></use>
-                      </svg> Logout
-                  </a>
-              </li>
-          </ul>
-      
-          <div class="sidebar-footer border-top d-none d-md-flex">
-              <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-          </div>
-      </div>
+        <div class="sidebar sidebar-fixed border-end" id="sidebar" style="background-color: maroon; color: white;">
+            <div class="sidebar-header border-bottom" style="background-color: #800000; color: white;">
+                <div class="sidebar-brand">
+                    <div class="Logo-bg">
+                        <img src="{{ asset('images/Logo3.png') }}" alt="" style="width:100%; height:60px;">
+                    </div>
+                   
+                </div>
+                <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" data-coreui-theme="dark" aria-label="Close" 
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                </button>
+            </div>
+        
+            <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.dashboard') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-speedometer') }}" style="fill: white;"></use>
+                        </svg> Dashboard
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.home') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-home') }}" style="fill: white;"></use>
+                        </svg> Home
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.about') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-info') }}" style="fill: white;"></use>
+                        </svg> About
+                    </a>
+                </li>
+        
+                <li class="nav-group">
+                    <a class="nav-link text-light nav-group-toggle" href="#">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-briefcase') }}" style="fill: white;"></use>
+                        </svg> Services
+                    </a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('admin.digitalmedia') }}">
+                                <span class="nav-icon text-light"><span class="nav-icon-bullet"></span></span> Digital Media
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('admin.printmedia') }}">
+                                <span class="nav-icon text-light"><span class="nav-icon-bullet"></span></span> Print Media
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.blogs.blog') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-notes') }}" style="fill: white;"></use>
+                        </svg> Blogs
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.contact.index') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-envelope-open') }}" style="fill: white;"></use>
+                        </svg> Contact Info
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.messages') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-envelope-open') }}" style="fill: white;"></use>
+                        </svg> Messages
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('teams.index') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-user') }}" style="fill: white;"></use>
+                        </svg> Team Members
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('admin.jobs.index') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-briefcase') }}" style="fill: white;"></use>
+                        </svg> Jobs
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('jobs.applications') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-notes') }}" style="fill: white;"></use>
+                        </svg> Job Applications
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('register') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-user-plus') }}" style="fill: white;"></use>
+                        </svg> Register
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('login') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-user') }}" style="fill: white;"></use>
+                        </svg> Login
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('logout') }}">
+                        <svg class="nav-icon text-light">
+                            <use xlink:href="{{ asset('adminimages/free.svg#cil-account-logout') }}" style="fill: white;"></use>
+                        </svg> Logout
+                    </a>
+                </li>
+            </ul>
+        
+            <div class="sidebar-footer border-top d-none d-md-flex" style="background-color: #800000;">
+                <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable" style="background-color: white;"></button>
+            </div>
+        </div>
+        
       
       <div class="wrapper d-flex flex-column min-vh-100">
           <header class="header header-sticky p-0 mb-4">
